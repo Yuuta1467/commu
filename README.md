@@ -1,4 +1,4 @@
-# ヘルパーコミュ（helpercommu）
+# ヘルパーコミュ（helper-commu）
 
 ## サイト概要
 
