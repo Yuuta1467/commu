@@ -5,7 +5,22 @@
       <%= link_to root_path do %>
   <i class="fas fa-thermometer fa-4x" style="color: #ffffff"></i>
       <% end %>
+    </div>
 
+    <div class="col-md-9 text-right mt-3 mb-5">
+      <p>
+      <% if admin_signed_in? %>_genres_path ,class: 'border border-dark btn btn-light text-dark' %>
+        <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: 'border border-dark btn btn-light text-dark' %>
+      <% elsif user_signed_in? %>
+        <!--h3 class="text-left text-white">ようこそ<!--%=current_user.name %>さん!</h3-->
+        <%= link_to "マイページ", user_path(current_user),class: 'border border-dark btn btn-light text-dark' %>
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'border border-dark btn btn-light text-dark' %>
+      <% else %>
+        <%= link_to "新規登録", new_user_registration_path,class: 'border border-dark btn btn-light text-dark' %>
+        <%= link_to "ログイン", new_user_session_path,class: 'border border-dark btn btn-light text-dark' %>
+        <%= link_to 'ゲストログイン（閲覧用）', posts_guest_sign_in_path, method: :post,class: 'border border-dark btn btn-light text-dark' %>
+      <% end %>
+      </p>
     </div>
   </div>
 </div>

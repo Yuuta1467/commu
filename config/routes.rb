@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
     get '/search', to: 'searches#search'
 
+    post '/posts/guest_sign_in', to: 'posts#guest_sign_in'
+
   end
 
   devise_for :admin, skip: [:registrations, :passwords] , controllers: {

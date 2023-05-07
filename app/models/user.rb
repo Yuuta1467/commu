@@ -13,6 +13,6 @@ class User < ApplicationRecord
          enum type: {介護職:0,在宅介護:1,その他:2}
 
          def active_for_authentication?
-          super && (self.is_delete == false)
+          super && (self.is_deleted == false)
          end
 end
