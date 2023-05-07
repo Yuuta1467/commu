@@ -1,15 +1,36 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-2  text-center">
-      <div class="bg-light">
+    <div class="col-md-2 text-center">
+      <div class="bg-light mt-3">
         <h3>マイページ</h3>
       </div>
     </div>
     <div class="col-md-8">
-      <div class="d-flex">
-        <h4 class="btn mx-md-4">登録情報</h4>
+      <div class="d-flex mt-3">
+        <h4>登録情報</h4>
         <%= link_to "編集する", edit_user_path(@user), class: "btn mx-md-4 btn-success ml-1" %>
       </div>
+
+      <div class="field border-bottom mt-2">
+        <p>プロフィール画像</p>
+        <%= image_tag @user.get_profile_image, size:'100x100' %>
+      </div>
+
+      <div class="d-flex border-bottom mt-2">
+        <p class= "col-sm-4">ニックネーム</p>
+        <p><%= @user.name %></p>
+      </div>
+
+      <div class="d-flex border-bottom mt-2">
+        <p class= "col-sm-4">自己紹介</p>
+        <p><%= @user.introduction %></p>
+      </div>
+
+      <div class="d-flex border-bottom mt-2">
+        <p class= "col-sm-4">ユーザータイプ</p>
+        <p><%= @user.type %></p>
+      </div>
+
     </div>
   </div>
 </div>
