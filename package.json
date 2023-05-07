@@ -1,5 +1,5 @@
 {
-  "name": "gamecommu",
+  "name":"helper_commu",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5",
