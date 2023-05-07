@@ -1,2 +1,35 @@
-<h1>Public::Users#edit</h1>
-<p>Find me in app/views/public/users/edit.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 text-center bg-light mt-3 col align-self-start">
+      <h3 >会員情報編集</h3>
+    </div>
+    <div class="col-md-8">
+      <%= form_with model: @user,url:user_path(@user),method: :patch do |f| %>
+      <div class="field border-bottom mt-3">
+        <%= f.label :"ニックネーム", class: "col-sm-3" %>
+        <%= f.text_field :name %>
+      </div>
+
+      <div class="field border-bottom mt-2">
+        <%= f.label :"メールアドレス", class: "col-sm-3" %>
+        <%= f.text_field :email %>
+      </div>
+
+      <div class="field border-bottom mt-2">
+        <%= f.label :"自己紹介", class: "col-sm-3" %>
+        <%= f.text_area :introduction, size: "40x4" %>
+      </div>
+
+      <div class="field border-bottom mt-2">
+        <%= f.label :"ユーザータイプ", class: "col-sm-3" %>
+        <%= f.select :helper_type,User.helper_types.keys, class:"helper_type" %>
+      </div>
+
+      <div class="actions text-center mt-2">
+        <%= f.submit "編集内容を保存", class: "btn btn-success" %>
+      </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

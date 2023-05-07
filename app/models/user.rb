@@ -10,7 +10,7 @@ class User < ApplicationRecord
 
          has_one_attached :profile_image
 
-         enum type: {介護職:0,在宅介護:1,その他:2}
+         enum helper_type: {未設定:0,介護職:1,在宅介護:2,その他:3}
 
          def active_for_authentication?
           super && (self.is_deleted == false)

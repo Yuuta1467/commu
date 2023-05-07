@@ -9,7 +9,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.1]
 
       t.string :name,               null: false
       t.string :introduction
-      t.integer :type
+      t.integer :helper_type,              null: false, default: "0"
 
       t.boolean :is_deleted,        null: false,default: "false"
 
