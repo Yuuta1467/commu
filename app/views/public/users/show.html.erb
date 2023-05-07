@@ -1,2 +1,15 @@
-<h1>Public::Users#show</h1>
-<p>Find me in app/views/public/users/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-2  text-center">
+      <div class="bg-light">
+        <h3>マイページ</h3>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="d-flex">
+        <h4 class="btn mx-md-4">登録情報</h4>
+        <%= link_to "編集する", edit_user_path(@user), class: "btn mx-md-4 btn-success ml-1" %>
+      </div>
+    </div>
+  </div>
+</div>
