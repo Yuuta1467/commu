@@ -9,7 +9,9 @@
 
     <div class="col-md-9 text-right mt-3 mb-5">
       <p>
-      <% if admin_signed_in? %>_genres_path ,class: 'border border-dark btn btn-light text-dark' %>
+      <% if admin_signed_in? %>
+      　<%= link_to "会員一覧",admin_users_path ,class: 'border border-dark btn btn-light text-dark' %>
+        <%= link_to "タグ一覧",admin_tags_path ,class: 'border border-dark btn btn-light text-dark' %>
         <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: 'border border-dark btn btn-light text-dark' %>
       <% elsif user_signed_in? %>
         <!--h3 class="text-left text-white">ようこそ<!--%=current_user.name %>さん!</h3-->
