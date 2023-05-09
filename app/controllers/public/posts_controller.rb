@@ -55,14 +55,14 @@ class Public::PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:content, :tag)
+    params.require(:post).permit(:content, :tag_id)
   end
 
-  #def ensure_correct_user
-     #@post = Post.find(params[:id])
-    #unless @post.user == current_user
-     #redirect_to posts_path
-    #end
-  #end
+  def ensure_correct_user
+     @post = Post.find(params[:id])
+    unless @post.user == current_user
+     redirect_to posts_path
+    end
+  end
 
 end
