@@ -1,6 +1,7 @@
 class Public::PostsController < ApplicationController
-  #before_action :authenticate_user!
-  #before_action :ensure_correct_user, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!
+  before_action :ensure_correct_user, only: [:edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: [:guest_sign_in]
 
   def new
     @post = Post.new

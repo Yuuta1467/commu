@@ -1,2 +1,18 @@
-<h1>Admin::Tags#edit</h1>
-<p>Find me in app/views/admin/tags/edit.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-2 text-center bg-light mt-3 col align-self-start">
+      <h4 class="text-center">タグ編集</h4>
+    </div>
+    <div class="p-4 text-center">
+      <%= form_with model:@tag,url:admin_tag_path(@tag) do |f| %>
+
+      <p><%= f.text_field :name %></p>
+
+      <div>
+        <%= f.submit "変更を保存", class: "btn pr-2 pl-2 my-3", style:"color:#007b43; background-color:#badcad;"%>
+      </div>
+
+      <% end %>
+    </div>
+  </div>
+</div>
