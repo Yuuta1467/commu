@@ -15,6 +15,13 @@ class Public::PostsController < ApplicationController
   def index
     @posts = Post.all
     @post_comments = PostComment.all
+        @tag = Tag.select("name", "id")
+        tag_search = params[:tag_search]
+        if tag_search != nil
+            @posts = Tag.find_by(id: tag_search).posts
+        else
+            @posts = Post.all
+        end
   end
 
   def create
