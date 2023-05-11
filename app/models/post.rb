@@ -4,9 +4,10 @@ class Post < ApplicationRecord
   belongs_to :tag
   has_many :post_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  has_many :likes, dependent: :destroy
 
   validates :content,presence:true
-  
+
   def favorited_by?(user)
     favorites.exists?(user_id: user.id)
   end

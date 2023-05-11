@@ -1,9 +1,9 @@
-class CreateFavorites < ActiveRecord::Migration[6.1]
+class CreateLikes < ActiveRecord::Migration[6.1]
   def change
-    create_table :favorites do |t|
-
+    create_table :likes do |t|
       t.integer :user_id,          null: false
       t.integer :post_id,          null: false
+      t.integer :post_comment_id,  null: false
 
       t.timestamps
     end
