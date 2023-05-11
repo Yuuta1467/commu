@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+    </div>
+    <div class="col-md-2 text-center">
+      <div class="bg-light mt-3">
+        <h3>お気に入り投稿一覧</h3>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <% @favorite_posts.each do |post| %>
+      <div class="d-flex align-items-center border-bottom mt-2 col-md-12">
+        <%= link_to post_path(post) do %>
+          <%= image_tag post.user.get_profile_image, size: "100x100" %>
+        <% end %>
+        <div class="col-sm-2"><%= post.user.name %></div>
+        <div class="col-sm-4"><%= post.content %></div>
+        <div class="col-sm-2"><%= post.tag.name %></div>
+        <div class="col-sm-2">
+          <%= render "public/favorites/btn", post: post %><br>
+          <%= link_to "投稿詳細へ", post_path(post) %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

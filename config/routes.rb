@@ -18,7 +18,12 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :users, only: [:show, :edit, :update,]
+    resources :users, only: [:show, :edit, :update,] do
+      member do
+        get :favorites
+      end
+    end
+
     get 'users/check' => 'users#check'
     patch 'users/withdraw' => 'users#withdraw'
 
