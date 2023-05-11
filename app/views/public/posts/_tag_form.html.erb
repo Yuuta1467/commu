@@ -1,0 +1,7 @@
+  <div class= "d-flex align-items-center mt-2">
+    <h4 class= "col-sm-3">タグ検索</h4>
+    <%= form_tag({controller:"posts",action:"index"}, method: :get) do %>
+      <%= select_tag :tag_search, options_from_collection_for_select(@tag, "id","name") %>
+      <%= submit_tag "検索する" %>
+    <% end %>
+  </div>

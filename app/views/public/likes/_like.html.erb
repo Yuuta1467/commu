@@ -1,11 +1,13 @@
     <% if Like.find_by(user_id: current_user.id, post_id: @post.id, post_comment_id: post_comment.id) %>
         <%= link_to  post_post_comment_likes_path(@post, post_comment, post_comment.likes), {class: "like-link", method: :delete } do %>
-          <i class="fas fa-grin-squint-tears unlike-btn"></i>
+          <i class="fas fa-heart" aria-hidden="true" style="color: red;"></i>
+          <%= post_comment.likes.count %>いいね
         <% end %>
-        <p class="count"><%= post_comment.likes.count %></p>
+
     <% else %>
         <%= link_to post_post_comment_likes_path(@post, post_comment), {class: "like-link", method: :post } do %>
-          <i class="far fa-grin-squint-tears like-btn"></i>
+          <i class="fas fa-heart" aria-hidden="true"></i>
+          <%= post_comment.likes.count %> いいね
         <% end %>
-        <p class="count"><%= post_comment.likes.count %></p>
+
     <% end %>

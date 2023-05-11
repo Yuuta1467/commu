@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-sm-12">
         <%= render 'public/searches/form' %>
-        <%= render 'public/searches/tag_form' %>
+        <%= render 'public/posts/tag_form' %>
     </div>
     <div class="col-md-2 text-center">
       <div class="bg-light mt-5">
@@ -20,9 +20,9 @@
       <div class="col-sm-4"><%= post.content %></div>
       <div class="col-sm-2"><%= post.tag.name %></div>
       <div class="col-sm-2">
+        <%= render "public/favorites/btn", post: post %>
         <%= link_to "投稿詳細へ", post_path(post) %>
       </div>
-      <%= render "public/favorites/btn", post: post %>
     </div>
   <% end %>
   </div>
