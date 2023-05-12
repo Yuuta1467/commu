@@ -6,6 +6,8 @@ class Admin::UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @posts = @user.posts
+    @post_comments = @user.post_comments
   end
 
   def edit
