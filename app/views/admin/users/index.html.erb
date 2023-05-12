@@ -1,2 +1,40 @@
-<h1>Admin::Users#index</h1>
-<p>Find me in app/views/admin/users/index.html.erb</p>
+<div class= "container">
+  <div class= "row">
+    <div class="col-md-2 text-center">
+      <div class="bg-light mt-5">
+        <h3>会員一覧</h3>
+      </div>
+    </div>
+
+    <table class= "table table-hover table-inverse mt-2">
+      <thead class="bg-light">
+        <tr>
+          <th>会員id</th>
+          <th>プロフィール画像</th>
+          <th>ニックネーム</th>
+          <th>ユーザータイプ</th>
+          <th>ステータス</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @users.each do |user| %>
+        <tr>
+          <td><%= user.id %></td>
+          <td><%= image_tag user.get_profile_image, size: "60x60" %></td>
+          <td><%= link_to user.name, admin_user_path(user.id) %></td>
+          <td><%= user.helper_type %></td>
+          <% if user.is_deleted == false %>
+            <td class="text-success">有効</td>
+          <% else %>
+            <td class="text-secondary">退会</td>
+          <% end %>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <div class="col-md-12 d-flex justify-content-center">
+  <!--%= paginate @users %-->
+    </div>
+  </div>
+</div>
