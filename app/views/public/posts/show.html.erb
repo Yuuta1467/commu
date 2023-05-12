@@ -29,7 +29,7 @@
 
 　<div class="row">
 　  <% @post.post_comments.each do |post_comment| %>
-    <div class="d-flex align-items-center col-md-12">
+    <div class="d-flex align-items-center col-md-12 mt-2">
       <div class="col-sm-1">
         <%= image_tag post_comment.user.get_profile_image, size: "50x50" %>
       </div>
@@ -39,11 +39,11 @@
       </div>
       <div class="col-sm-4"><%= post_comment.comment %></div>
       <div class="col-sm-2">
-        <%= render "public/likes/like", post_comment: post_comment %>
+        <%= render "public/likes/like", post_comment: post_comment %><br>
         <%= link_to "コメント編集へ", edit_post_post_comment_path(post_comment.post,post_comment) %>
       </div>
       <div class="col-sm-2">
-      　<%= link_to "投稿削除", post_post_comment_path(post_comment.post,post_comment), method: :delete, class: "btn btn-danger" %>
+      　<%= link_to "コメント削除", post_post_comment_path(post_comment.post,post_comment), method: :delete, class: "btn btn-danger" %>
       </div>
 
     </div>
