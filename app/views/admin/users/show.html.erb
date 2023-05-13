@@ -48,26 +48,26 @@
   </div>
 
     <div class="row">
-      
+
       <div class="col-md-6">
-        
+
         <div class="col-md-3 text-center">
           <div class="bg-light mt-5">
             <p>投稿一覧</p>
           </div>
         </div>
-        
+
         <%= render 'admin/posts/index',posts: @posts %>
       </div>
 
       <div class="col-md-6">
-        
+
         <div class="col-md-3 text-center">
           <div class="bg-light mt-5">
             <p>コメント一覧</p>
           </div>
         </div>
-        
+
         <%= render 'admin/post_comments/index',post_comments: @post_comments %>
       </div>
 

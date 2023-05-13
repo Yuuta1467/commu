@@ -24,8 +24,8 @@ Rails.application.routes.draw do
       end
     end
 
-    get 'users/check' => 'users#check'
-    patch 'users/withdraw' => 'users#withdraw'
+    get 'users/:id/check' => 'users#check', as:'check'
+    patch 'users/:id/withdraw' => 'users#withdraw', as:'withdraw'
 
     get '/search', to: 'searches#search'
 
