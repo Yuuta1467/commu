@@ -1,1 +1,9 @@
-posts/_index作成予定
+<% @posts.each do |post| %>
+  <div class="d-flex align-items-center border-bottom mt-2">
+    <div class="col-sm-4"><%= post.content %></div>
+    <div class="col-sm-3"><%= post.tag.name %></div>
+    <div class="col-sm-4">
+      <%= link_to "投稿削除", post_path, method: :delete, class: "btn btn-danger" %>
+    </div>
+  </div>
+<% end %>

@@ -1,1 +1,11 @@
-post_comments/_index 作成予定
+<% @post_comments.each do |post_comment| %>
+  <div class="d-flex align-items-center border-bottom mt-2">
+    <div class="col-sm-3">
+      <%= post_comment.created_at.strftime('%Y/%m/%d') %>
+    </div>
+    <div class="col-sm-4"><%= post_comment.comment %></div>
+    <div class="col-sm-4">
+      <%= link_to "コメント削除", post_post_comment_path(post_comment.post,post_comment), method: :delete, class: "btn btn-danger" %>
+    </div>
+  </div>
+<% end %>
