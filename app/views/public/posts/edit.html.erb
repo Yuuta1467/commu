@@ -1,8 +1,12 @@
 <div class="container">
-  <div class="row">
 
-    <div class="col-md-3 text-center bg-light mt-3 col align-self-start">
-      <h3 >新規投稿画面</h3>
+  <div class="row">
+    <%= render "public/shared/error_messages", resource: @post %>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3 text-center mt-3 col align-self-start">
+      <h3 >投稿編集画面</h3>
     </div>
 
     <div class="col-md-8">

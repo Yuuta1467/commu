@@ -17,7 +17,7 @@ class Admin::UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      redirect_to admin_user_path(@user)#,notice: "変更を保存しました"
+      redirect_to admin_user_path(@user),notice: "変更を保存しました"
     else
       render :edit
     end
