@@ -1,13 +1,13 @@
 class Admin::UsersController < ApplicationController
   before_action :authenticate_admin!
   def index
-    @users = User.all
+    @users = User.page(params[:page]).order(created_at: :desc)
   end
 
   def show
     @user = User.find(params[:id])
-    @posts = @user.posts
-    @post_comments = @user.post_comments
+    @posts = @user.posts.order(created_at: :desc)
+    @post_comments = @user.post_comments.order(created_at: :desc)
   end
 
   def edit

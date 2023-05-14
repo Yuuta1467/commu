@@ -13,14 +13,14 @@ class Public::PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    @posts = Post.page(params[:page]).order(created_at: :desc)
     @post_comments = PostComment.all
         @tag = Tag.select("name", "id")
         tag_search = params[:tag_search]
         if tag_search != nil
             @posts = Tag.find_by(id: tag_search).posts
         else
-            @posts = Post.all
+            @posts = Post.page(params[:page]).all.order(created_at: :desc)
         end
   end
 
