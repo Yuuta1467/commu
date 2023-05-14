@@ -11,6 +11,9 @@ class User < ApplicationRecord
 
          has_one_attached :profile_image
 
+         validates :name, length: { minimum: 2, maximum: 20 }, uniqueness: true
+         validates :introduction, length: { maximum: 50}
+
          enum helper_type: {未設定:0,介護職:1,在宅介護:2,その他:3}
 
          def active_for_authentication?

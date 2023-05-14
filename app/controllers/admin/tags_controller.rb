@@ -1,5 +1,5 @@
 class Admin::TagsController < ApplicationController
-  #before_action :authenticate_admin!
+  before_action :authenticate_admin!
   def index
     @tag = Tag.new
     @tags = Tag.all
@@ -20,10 +20,21 @@ class Admin::TagsController < ApplicationController
     if @tag.update(tag_params)
       redirect_to admin_tags_path#, notice: '変更しました'
     else
-      #flash[:danger] = @genre.errors.full_messages
+      #flash[:danger] = @tag.errors.full_messages
       redirect_to edit_admin_tag_path(@tag)
     end
   end
+
+  def destroy
+    @tag = Tag.find(params[:id])
+    if @tag.destroy
+    redirect_to admin_tags_path#, notice: '変更しました'
+    else
+      #flash[:danger] = @tag.errors.full_messages
+      redirect_to edit_admin_tag_path(@tag)
+    end
+  end
+
 
   private
 

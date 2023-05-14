@@ -5,7 +5,7 @@ class Public::SearchesController < ApplicationController
     @method = params[:method]
     @records = search_for(@model, @content2, @method)
   end
-  
+
   private
   def search_for(model, content2, method)
     if model == 'user'
