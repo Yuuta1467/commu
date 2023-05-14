@@ -22,7 +22,7 @@ class Admin::TagsController < ApplicationController
   def update
     @tag = Tag.find(params[:id])
     if @tag.update(tag_params)
-      redirect_to admin_tags_path, notice: '変更を保存しました'
+      redirect_to admin_tags_path, notice: '変更を保存しました。'
     else
       render :edit
     end
