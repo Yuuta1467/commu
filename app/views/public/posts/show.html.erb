@@ -44,7 +44,7 @@
       </div>
       <div class="col-sm-4"><%= post_comment.comment %></div>
       <div class="col-sm-2">
-        <%= render "public/likes/like", post_comment: post_comment %><br>
+        <div id="post_comment_<%= post_comment.id %>"><%= render "public/likes/like", post_comment: post_comment %></div>
         <%= link_to "コメント編集へ", edit_post_post_comment_path(post_comment.post,post_comment) %>
       </div>
       <div class="col-sm-2">
