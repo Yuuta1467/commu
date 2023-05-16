@@ -15,7 +15,7 @@
     <div class="card-header mx-0" style="background-color: rgb(250, 250, 150);">
       <div class="d-flex align-items-center">
         <%= link_to post_path(post) do %>
-          <%= image_tag post.user.get_profile_image, size: "50x50" %>
+          <%= image_pack_tag post.user.get_profile_image, size: "50x50" %>
         <% end %>
 
         <div class="mb-0 ml-0 mt-3">
