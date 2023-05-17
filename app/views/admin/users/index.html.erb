@@ -27,7 +27,7 @@
         <% @users.each do |user| %>
         <tr>
           <td><%= user.id %></td>
-          <td><%= image_pack_tag user.get_profile_image, size: "60x60" %></td>
+          <td><%= image_tag user.get_profile_image, size: "60x60" %></td>
           <td><%= link_to user.name, admin_user_path(user.id) %></td>
           <td><%= user.helper_type %></td>
           <% if user.is_deleted == false %>

@@ -16,7 +16,7 @@
 
   <div class="row">
     <div class="d-flex align-items-center border-bottom mt-2 col-md-12">
-      <%= image_pack_tag @post.user.get_profile_image, size: "100x100" %>
+      <%= image_tag @post.user.get_profile_image, size: "100x100" %>
       <div class="col-sm-1"><%= @post.user.name %></div>
       <div class="col-sm-2"><%= @post.created_at.strftime('%Y/%m/%d') %></div>
       <div class="col-sm-4"><%= @post.content %></div>
@@ -36,7 +36,7 @@
 　  <% @post.post_comments.each do |post_comment| %>
     <div class="d-flex align-items-center col-md-12 mt-2">
       <div class="col-sm-1">
-        <%= image_pack_tag post_comment.user.get_profile_image, size: "50x50" %>
+        <%= image_tag post_comment.user.get_profile_image, size: "50x50" %>
       </div>
       <div class="col-sm-1"><%= post_comment.user.name %></div>
       <div class="col-sm-2">
