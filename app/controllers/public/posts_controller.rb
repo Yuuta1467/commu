@@ -20,9 +20,9 @@ class Public::PostsController < ApplicationController
         tag_search = params[:tag_search]#タグサーチ用記述
         keyword = params[:keyword]#キーワードサーチ用記述
         if tag_search != nil
-            @posts = Tag.find_by(id: tag_search).posts
+            @posts = Tag.find_by(id: tag_search).posts.page(params[:page]).order(created_at: :desc)
         elsif keyword.present?
-             @posts = Post.where("content LIKE :keyword", keyword: "%#{keyword}%")
+             @posts = Post.where("content LIKE :keyword", keyword: "%#{keyword}%").page(params[:page]).order(created_at: :desc)
         else
              @posts = Post.page(params[:page]).order(created_at: :desc)
         end
