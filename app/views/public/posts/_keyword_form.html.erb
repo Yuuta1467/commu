@@ -1,0 +1,7 @@
+<div class= "d-flex align-items-center mt-2">
+    <h4 class= "col-sm-3">キーワード検索</h4>
+  <%= form_tag(posts_path, method: :get) do %>
+    <%= text_field_tag :keyword %>
+    <%= submit_tag "検索する" %>
+  <% end %>
+</div>

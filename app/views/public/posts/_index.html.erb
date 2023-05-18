@@ -1,15 +1,4 @@
-<div class="container">
-  <div class="row">
-    <div class="col-sm-12">
-    </div>
-    <div class="col-md-2 text-center">
-      <div class="mt-2">
-        <h3>投稿一覧</h3>
-      </div>
-    </div>
-  </div>
-
-  <% posts.each do |post| %>
+ <% posts.each do |post| %>
   <tr id="post_<%= post.id %>">
   <div class="card mb-3 col-md-11">
     <div class="card-header mx-0" style="background-color: rgb(250, 250, 150);">
@@ -37,4 +26,3 @@
   </div>
   </tr>
   <% end %>
-</div>

@@ -15,13 +15,19 @@ class Public::PostsController < ApplicationController
   def index
     @posts = Post.page(params[:page]).order(created_at: :desc)
     @post_comments = PostComment.all
+
         @tag = Tag.select("name", "id")
-        tag_search = params[:tag_search]
+        tag_search = params[:tag_search]#タグサーチ用記述
+        keyword = params[:keyword]#キーワードサーチ用記述
         if tag_search != nil
             @posts = Tag.find_by(id: tag_search).posts
+        elsif keyword.present?
+             @posts = Post.where("content LIKE :keyword", keyword: "%#{keyword}%")
         else
-            @posts = Post.page(params[:page]).all.order(created_at: :desc)
+             @posts = Post.page(params[:page]).order(created_at: :desc)
         end
+             render :index, locals: { keyword: keyword }
+
   end
 
   def create
