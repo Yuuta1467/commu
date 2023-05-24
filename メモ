@@ -1,38 +1,24 @@
- div class="row justify-content-center">
+[3cd3db1f-965e-4978-9433-89cbd8c0c8ce] ActionView::Template::Error (The asset "" is not present in the asset pipeline.
+):
+[3cd3db1f-965e-4978-9433-89cbd8c0c8ce]     27:         <% @users.each do |user| %>
+[3cd3db1f-965e-4978-9433-89cbd8c0c8ce]     28:         <tr>
+[3cd3db1f-965e-4978-9433-89cbd8c0c8ce]     29:           <td><%= user.id %></td>
+[3cd3db1f-965e-4978-9433-89cbd8c0c8ce]     30:           <td><%= image_tag asset_path(user.get_profile_image), size: "60x60" %></td>
+[3cd3db1f-965e-4978-9433-89cbd8c0c8ce]     31:           <td><%= link_to user.name, admin_user_path(user.id) %></td>
+[3cd3db1f-965e-4978-9433-89cbd8c0c8ce]     32:           <td><%= user.helper_type %></td>
+[3cd3db1f-965e-4978-9433-89cbd8c0c8ce]     33:           <% if user.is_deleted == false %>
 
-  <% @movies.each do |movie| %>
 
-  <div class="col-md-3 my-3 text-center">
 
-   <div class="card border-secondary mb-3">
-
-    <div class="card-header">
-
-    <%= link_to admin_movie_path(movie['id']) do %>
-
-     <% if movie['poster_path'] %>
-
-      <p><%= image_tag 'https://image.tmdb.org/t/p/w342' + movie['poster_path'],class: "card-img" %></p>
-
-     <% end %>
-
-    <% end %>
-
-    </div>
-
-    <div class="card-body">
-
-     <p class="card-text"><%= link_to movie['title'], admin_movie_path(movie['id']),class:"btn btn-link" %></p>
-
-    </div>
-
-   </div>
-
-  </div>
-
-  <% end %>
-
- </div>
- 
- 
- <div class="card w-100 h-100 bg-bg-light text-center pt-2" style="width: 18rem;">
+[c66d05f6-e423-48ca-a8d6-523a82958e7e] ActionView::Template::Error (The asset "media/images/no_image.jpg" is not present in the asset pipeline.
+):
+[c66d05f6-e423-48ca-a8d6-523a82958e7e]     27:         <% @users.each do |user| %>
+[c66d05f6-e423-48ca-a8d6-523a82958e7e]     28:         <tr>
+[c66d05f6-e423-48ca-a8d6-523a82958e7e]     29:           <td><%= user.id %></td>
+[c66d05f6-e423-48ca-a8d6-523a82958e7e]     30:           <td><%= image_tag user.get_profile_image, size: "60x60" %></td>
+[c66d05f6-e423-48ca-a8d6-523a82958e7e]     31:           <td><%= link_to user.name, admin_user_path(user.id) %></td>
+[c66d05f6-e423-48ca-a8d6-523a82958e7e]     32:           <td><%= user.helper_type %></td>
+[c66d05f6-e423-48ca-a8d6-523a82958e7e]     33:           <% if user.is_deleted == false %>
+[c66d05f6-e423-48ca-a8d6-523a82958e7e]
+[c66d05f6-e423-48ca-a8d6-523a82958e7e] app/views/admin/users/index.html.erb:30
+[c66d05f6-e423-48ca-a8d6-523a82958e7e] app/views/admin/users/index.html.erb:27
