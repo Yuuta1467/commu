@@ -37,17 +37,17 @@ tags = Tag.create!(
 Post.create!(
   [
     {user_id: users[0].id, content: '悩みがあります', tag_id: tags[0].id },
-    {user_id: users[0].id, content: '相談があります', tag_id: tags[1].id },
-    {user_id: users[0].id, content: '疑問があります', tag_id: tags[2].id },
-    {user_id: users[0].id, content: '雑談しましょう', tag_id: tags[3].id },
-    {user_id: users[0].id, content: 'こんにちは', tag_id: tags[4].id },
-    {user_id: users[0].id, content: '悩んでいます', tag_id: tags[0].id },
-    {user_id: users[0].id, content: '介護について相談があります', tag_id: tags[1].id },
+    {user_id: users[1].id, content: '相談があります', tag_id: tags[1].id },
+    {user_id: users[2].id, content: '疑問があります', tag_id: tags[2].id },
+    {user_id: users[3].id, content: '雑談しましょう', tag_id: tags[3].id },
+    {user_id: users[4].id, content: 'こんにちは', tag_id: tags[4].id },
+    {user_id: users[5].id, content: '悩んでいます', tag_id: tags[0].id },
+    {user_id: users[6].id, content: '介護について相談があります', tag_id: tags[1].id },
     {user_id: users[0].id, content: '色々なお話をしましょう！', tag_id: tags[3].id },
-    {user_id: users[0].id, content: '介護について疑問があります', tag_id: tags[2].id },
-    {user_id: users[0].id, content: 'よろしくお願いします', tag_id: tags[4].id },
-    {user_id: users[0].id, content: '最近疲れています', tag_id: tags[4].id },
-    {user_id: users[0].id, content: '介護は大変ですか？', tag_id: tags[2].id }
+    {user_id: users[1].id, content: '介護について疑問があります', tag_id: tags[2].id },
+    {user_id: users[2].id, content: 'よろしくお願いします', tag_id: tags[4].id },
+    {user_id: users[3].id, content: '最近疲れています', tag_id: tags[4].id },
+    {user_id: users[4].id, content: '介護は大変ですか？', tag_id: tags[2].id }
   ]
   )
 
