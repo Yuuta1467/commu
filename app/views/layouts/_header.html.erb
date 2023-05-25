@@ -1,29 +1,64 @@
-<div class="container-fluid" style="background-color: rgb(200, 200, 0);">
+<div class="container-fluid" style="background-color: rgb(190, 210, 0);">
   <div class="row">
-    <div class="col-md-5 mt-3 mb-3 ">
+    <div class="col-md-4 mt-2 mb-3 ">
 
-      <%= link_to root_path do %>
-  <i class="fas fa-thermometer fa-4x mr-3" style="color: #ffffff"></i>
-      <% end %>
+    <h3>
+    <%= link_to root_path, class: 'text-light' do %>
+      <i class="far fa-smile fa-lg ml-3 mt-3" style="color: #ffffff"></i> ホームへ
+    <% end %>
+    </h3>
     </div>
 
-    <div class="col-md-7 text-right mt-3 mb-5">
-      <p>
+    <div class="col-md-8 text-right mt-4 mb-4">
+      <h4>
       <% if admin_signed_in? %>
-      　<%= link_to "会員一覧",admin_users_path ,class: 'btn btn-light text-dark' %>
-        <%= link_to "タグ一覧",admin_tags_path ,class: 'btn btn-light text-dark' %>
-        <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: 'btn btn-light text-dark' %>
-      <% elsif user_signed_in? %>
-        <%= link_to "投稿一覧", posts_path,class: 'btn btn-light text-dark' %>
-        <%= link_to "新規投稿", new_post_path,class: 'btn btn-light text-dark' %>
-        <%= link_to "マイページ", user_path(current_user),class: 'btn btn-light text-dark' %>
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn btn-light text-dark' %>
-      <% else %>
-        <%= link_to "新規登録", new_user_registration_path,class: 'btn btn-light text-dark' %>
-        <%= link_to "ログイン", new_user_session_path,class: 'btn btn-light text-dark' %>
-        <%= link_to 'ゲストログイン（閲覧用）', posts_guest_sign_in_path, method: :post,class: 'btn btn-light text-dark' %>
+
+      <%= link_to admin_users_path ,class: 'btn btn-light text-success' do %>
+        <i class="fas fa-users"></i> 会員一覧
       <% end %>
-      </p>
+
+        <%= link_to admin_tags_path ,class: 'btn btn-light text-success' do %>
+          <i class="fas fa-tags"></i> タグ一覧
+        <% end %>
+
+        <%= link_to destroy_admin_session_path, method: :delete, class: 'btn btn-light text-success' do %>
+          <i class="fas fa-sign-out-alt"></i> ログアウト
+        <% end %>
+
+      <% elsif user_signed_in? %>
+
+        <%= link_to posts_path,class: 'btn btn-light text-success' do %>
+          <i class="fas fa-list-alt"></i> 投稿一覧
+        <% end %>
+
+        <%= link_to new_post_path,class: 'btn btn-light text-success' do  %>
+          <i class="fas fa-pencil-alt"></i> 新規投稿
+        <% end %>
+
+        <%= link_to user_path(current_user),class: 'btn btn-light text-success' do %>
+          <i class="fas fa-home"></i> マイページ
+        <% end %>
+
+        <%= link_to destroy_user_session_path, method: :delete, class: 'btn btn-light text-success' do %>
+          <i class="fas fa-sign-out-alt"></i> ログアウト
+        <% end %>
+
+      <% else %>
+
+        <%= link_to new_user_registration_path,class: 'btn btn-light text-success' do %>
+          <i class="fas fa-user-plus"></i> 新規登録
+        <% end %>
+
+        <%= link_to new_user_session_path,class: 'btn btn-light text-success' do %>
+          <i class="fas fa-sign-in-alt"></i> ログイン
+        <% end %>
+
+        <%= link_to posts_guest_sign_in_path, method: :post,class: 'btn btn-light text-success' do %>
+          <i class="fas fa-sign-in-alt"></i> ゲストログイン
+        <% end %>
+
+      <% end %>
+      </h4>
     </div>
   </div>
 </div>
