@@ -64,35 +64,4 @@
 
   <%= render 'public/post_comments/index', post: @post %>
 
-<!--<div class="post_comments">-->
-<!--  <% @post.post_comments.each do |post_comment| %>-->
-<!--<div class="row">-->
-<!--    <div class="card mb-3 col-md-10 offset-1">-->
-
-<!--        <div class="card-title d-flex align-items-center">-->
-<!--          <div class="col-sm-1 mt-3"><%= image_tag post_comment.user.get_profile_image, size: "50x50" %></div>-->
-<!--          <div class="col-sm-2"><%= post_comment.user.name %></div>-->
-<!--          <div class="col-sm-2">-->
-<!--            <%= post_comment.created_at.strftime('%Y/%m/%d') %>-->
-<!--          </div>-->
-<!--        </div>-->
-
-<!--        <div class="card-body d-flex align-items-center">-->
-<!--         <p class="card-text col-sm-8"><%= post_comment.comment %>></p>-->
-<!--        <div class="col-sm-2">-->
-<!--          <div id="like_buttons_<%= post_comment.id %>">-->
-<!--            <%= render "public/likes/like", post_comment: post_comment %>-->
-<!--          </div>-->
-<!--            <%= link_to "コメント編集へ", edit_post_post_comment_path(post_comment.post,post_comment) %>-->
-<!--        </div>-->
-<!--        <div class="actions col-md-3">-->
-<!--          <%= link_to "コメント削除", post_post_comment_path(post_comment.post,post_comment), method: :delete, remote: true, class: "btn btn-danger" %>-->
-<!--        </div>-->
-
-<!--      </div>-->
-<!--    </div>-->
-<!--</div>-->
-<!--  <% end %>-->
-<!--</div>-->
-
 </div>
