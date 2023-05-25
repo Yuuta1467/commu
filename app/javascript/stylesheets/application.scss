@@ -1,2 +1,7 @@
 @use '~bootstrap/scss/bootstrap';
 @use '~@fortawesome/fontawesome-free/scss/fontawesome';
+
+body{
+  background-image: url('../images/736141.jpg');
+  background-size: cover;
+}
