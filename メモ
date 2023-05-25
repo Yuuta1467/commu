@@ -22,3 +22,13 @@
 [c66d05f6-e423-48ca-a8d6-523a82958e7e]
 [c66d05f6-e423-48ca-a8d6-523a82958e7e] app/views/admin/users/index.html.erb:30
 [c66d05f6-e423-48ca-a8d6-523a82958e7e] app/views/admin/users/index.html.erb:27
+
+
+
+ body{
+
+background-image: image-url('cook.jpg');
+
+background-size: cover;
+
+}　　scssにリネーム

@@ -1,13 +1,14 @@
 <div class="container-fluid" style="background-color: rgb(200, 200, 0);">
   <div class="row">
-    <div class="col-md-3 mt-5 mb-3">
+    <div class="col-md-5 mt-3 mb-3 ">
 
       <%= link_to root_path do %>
-  <i class="fas fa-thermometer fa-4x" style="color: #ffffff"></i>
+  <i class="fas fa-thermometer fa-4x mr-3" style="color: #ffffff"></i>
       <% end %>
+        <%= image_tag asset_path("23046475.jpg"), size:'120x120' %>
     </div>
 
-    <div class="col-md-9 text-right mt-3 mb-5">
+    <div class="col-md-7 text-right mt-3 mb-5">
       <p>
       <% if admin_signed_in? %>
       　<%= link_to "会員一覧",admin_users_path ,class: 'btn btn-light text-dark' %>
