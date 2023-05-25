@@ -9,7 +9,7 @@
       <h3 >新規投稿画面</h3>
     </div>
 
-    <div class="col-md-8">
+    <div class="col-md-6">
     <%= form_with model: @post do |f| %>
       <div class="field mt-5 ">
         <%= f.label :"投稿記入欄", class: "col-sm-3 d-flex align-items-start" %>
@@ -17,8 +17,8 @@
       </div>
 
       <div class="form-group">
-          <%= f.label 'タグ選択', class: "col-sm-2 mt-2" %>
-          <%= f.collection_select :tag_id, Tag.all, :id, :name, class: "col-sm-3 form-control border-dark" %>
+          <%= f.label 'タグ選択', class: "col-sm-3 mt-2" %>
+          <%= f.collection_select :tag_id, Tag.all, :id, :name, class: "col-sm-2 form-control border-dark" %>
       </div>
 
       <div class="actions text-center mt-1">
@@ -26,5 +26,8 @@
       </div>
 　　<% end %>
     </div>
+  </div>
+  <div class="mt-auto">
+      <%= image_tag asset_path("22457750.jpg"), size:'150x200' %>
   </div>
 </div>
