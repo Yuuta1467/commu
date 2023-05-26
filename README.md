@@ -18,7 +18,9 @@
 - 介護に関わる人たちが持つ情報や考えを閲覧する時
 
 ## 設計書
-<...>
+- アプリケーション設計書 https://docs.google.com/spreadsheets/d/1lgBhdl9njvu4XJIFIryxrmW0BE0_GY_cDal6hBkR664/edit?usp=sharing
+- テーブル定義書 https://docs.google.com/spreadsheets/d/1Jru4nu8BpPYYYm0R75vi478kuTettV8n0QyYBd6uu3s/edit?usp=sharing
+- ER図 https://drive.google.com/file/d/1G29ggmszg-T_Ar1HDWSmt1sFEWOfSVJI/view?usp=sharing
 
 ## 開発環境
 - OS：Linux(CentOS)
@@ -28,4 +30,5 @@
 - IDE：Cloud9
 
 ## 使用素材
-- イラストACより画像2点引用　https://www.ac-illust.com
+- Google FontsよりZen Maru Gothic使用 https://fonts.google.com
+- イラストACより画像引用 https://www.ac-illust.com
