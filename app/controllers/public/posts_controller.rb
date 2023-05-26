@@ -25,6 +25,7 @@ class Public::PostsController < ApplicationController
              @posts = Post.where("content LIKE :keyword", keyword: "%#{keyword}%").page(params[:page]).order(created_at: :desc)
         else
              @posts = Post.page(params[:page]).order(created_at: :desc)
+             #タグもキーワードも選択されなければ投稿ページへ
         end
              render :index, locals: { keyword: keyword }
 

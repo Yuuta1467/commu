@@ -9,6 +9,7 @@ class Admin::UsersController < ApplicationController
     @user = User.find(params[:id])
     @posts = @user.posts.order(created_at: :desc)
     @post_comments = @user.post_comments.order(created_at: :desc)
+    #会員詳細画面に投稿と、コメント一覧表示
   end
 
   def edit
