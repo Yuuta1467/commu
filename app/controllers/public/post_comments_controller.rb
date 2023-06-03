@@ -21,6 +21,7 @@ class Public::PostCommentsController < ApplicationController
   def update
     @post = Post.find(params[:post_id])
     @post_comment = PostComment.find(params[:id])
+    @post_comment.score = Language.get_data(post_comment_params[:comment])
     if @post_comment.update(post_comment_params)
       redirect_to @post, notice: "変更を保存しました。"
     else

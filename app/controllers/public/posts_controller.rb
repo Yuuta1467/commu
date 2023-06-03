@@ -47,6 +47,8 @@ class Public::PostsController < ApplicationController
   end
 
   def update
+    @post = Post.find(params[:id])
+    @post.score = Language.get_data(post_params[:content])
     if @post.update(post_params)
       redirect_to post_path(@post), notice: "変更を保存しました。"
     else
