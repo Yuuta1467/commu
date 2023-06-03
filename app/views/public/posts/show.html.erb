@@ -31,6 +31,7 @@
     </div>
     <div class="card-body d-flex align-items-center">
       <p class="card-text col-sm-9"><%= @post.content %></p>
+      <p class="sentiment-score">本文の感情分析スコア[<%= @post.score %>]</p>
       <div class="col-sm-2">
         <div id="favorite_buttons_<%= @post.id %>">
           <%= render "public/favorites/btn", post: @post %>

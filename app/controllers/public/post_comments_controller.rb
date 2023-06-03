@@ -11,6 +11,7 @@ class Public::PostCommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
     @comment = current_user.post_comments.new(post_comment_params)
+    @comment.score = Language.get_data(post_comment_params[:comment])
     @comment.post_id = @post.id
     @comment.save
     #redirect_back(fallback_location: root_path)

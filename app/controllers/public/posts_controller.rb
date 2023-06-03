@@ -9,11 +9,13 @@ class Public::PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    #@post.score = Language.get_data(post_params[:content])
     @post_comment = PostComment.new
   end
 
   def index
     @posts = Post.page(params[:page]).order(created_at: :desc)
+    #@posts.score = Language.get_data(post_params[:content])
     @post_comments = PostComment.all
 
         @tag = Tag.select("name", "id")
@@ -33,6 +35,7 @@ class Public::PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    @post.score = Language.get_data(post_params[:content])
     @post.user_id = current_user.id
     if @post.save
       redirect_to posts_path
