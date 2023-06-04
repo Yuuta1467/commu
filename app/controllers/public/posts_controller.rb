@@ -35,6 +35,7 @@ class Public::PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    # 自然言語API機能
     @post.score = Language.get_data(post_params[:content])
     @post.user_id = current_user.id
     if @post.save
@@ -48,6 +49,7 @@ class Public::PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
+    # 自然言語API機能
     @post.score = Language.get_data(post_params[:content])
     if @post.update(post_params)
       redirect_to post_path(@post), notice: "変更を保存しました。"
