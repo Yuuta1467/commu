@@ -12,28 +12,28 @@
 
 
 
-      <div class="row d-flex border-bottom mt-3">
-         <%= f.label '会員画像', class: "col-sm-3" %>
+      <div class="row d-flex border-bottom mt-3 col-sm-8">
+         <%= f.label '会員画像', class: "col-sm-4" %>
          <%= f.file_field :profile_image, accept: "image/*" %>
       </div>
 
-      <div class="row d-flex border-bottom mt-2">
-        <%= f.label :"ニックネーム", class: "col-sm-3" %>
+      <div class="row d-flex border-bottom mt-2 col-sm-8">
+        <%= f.label :"ニックネーム", class: "col-sm-4" %>
         <%= f.text_field :name %>
       </div>
 
-      <div class="row d-flex border-bottom mt-2">
-        <%= f.label :"メールアドレス", class: "col-sm-3" %>
+      <div class="row d-flex border-bottom mt-2 col-sm-8">
+        <%= f.label :"メールアドレス", class: "col-sm-4" %>
         <%= f.text_field :email %>
       </div>
 
-      <div class="row d-flex border-bottom mt-2 d-flex align-items-start">
+      <div class="row d-flex border-bottom mt-2 d-flex align-items-start col-sm-10">
         <%= f.label :"自己紹介", class: "col-sm-3" %>
         <%= f.text_area :introduction, size: "40x4" %>
       </div>
 
-      <div class="row d-flex border-bottom mt-2">
-        <%= f.label :"ユーザータイプ", class: "col-sm-3" %>
+      <div class="row d-flex border-bottom mt-2 col-sm-8">
+        <%= f.label :"ユーザータイプ", class: "col-sm-4" %>
         <%= f.select :helper_type,User.helper_types.keys, class:"helper_type" %>
       </div>
 
@@ -44,7 +44,7 @@
         <% end %>
       </div>
     </div>
-    <div class="row col-md-2 offset-md-10">
+    <div class="text-right">
       <%= image_tag asset_path("23867223.jpg"), size:'140x100' %>
     </div>
   </div>

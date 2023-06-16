@@ -3,6 +3,8 @@ class Public::UsersController < ApplicationController
 
   def show
     @user = current_user
+    @posts = @user.posts.order(created_at: :desc)
+    @post_comments = @user.post_comments.order(created_at: :desc)
   end
 
   def edit

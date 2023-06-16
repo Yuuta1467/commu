@@ -35,8 +35,8 @@ class Public::PostCommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @post_comment = @post.post_comments.find(params[:id])
     @post_comment.destroy
-     #redirect_back(fallback_location: root_path)
-    #非同期通信のためコメントアウト redirect_to post_path(params[:post_id])
+    redirect_back(fallback_location: root_path)
+    #非同期通信一時
   end
 
   private

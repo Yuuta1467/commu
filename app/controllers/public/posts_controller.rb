@@ -11,6 +11,9 @@ class Public::PostsController < ApplicationController
     @post = Post.find(params[:id])
     #@post.score = Language.get_data(post_params[:content])
     @post_comment = PostComment.new
+  rescue ActiveRecord::RecordNotFound
+    redirect_to posts_path
+    #投稿削除時にdrstoryアクションのredirect_back(fallback_location: root_path)ができないためindexに移動
   end
 
   def index
@@ -60,7 +63,7 @@ class Public::PostsController < ApplicationController
 
   def destroy
     @post.destroy
-    redirect_to posts_path
+    redirect_back(fallback_location: root_path)
   end
 
   def guest_sign_in #ゲストログイン機能
