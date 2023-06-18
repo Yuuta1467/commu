@@ -5,6 +5,7 @@
     </div>
     <div class="col-sm-4"><%= post.content %></div>
     <div class="sentiment-score mr-4">感情分析スコア[<%= post.score %>]</div>
+    <!--自然言語処理API-->
     <div class="mr-4"><%= post.tag.name %></div>
     <div>
       <%= link_to "削除", admin_post_path(post), method: :delete, class: "btn btn-danger" %>
