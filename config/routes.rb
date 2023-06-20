@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
 
-  namespace :public do
-    get 'liles/create'
-    get 'liles/destroy'
-  end
   devise_for :users, skip: [:passwords], controllers: {
   registrations: "public/registrations",
   sessions: 'public/sessions'
@@ -18,7 +14,7 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :users, only: [:show, :edit, :update,] do
+    resources :users, only: [:show, :edit, :update] do
       member do
         get :favorites
       end
