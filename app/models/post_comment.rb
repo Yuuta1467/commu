@@ -6,9 +6,4 @@ class PostComment < ApplicationRecord
 
   validates :comment, presence: true
 
-  def favorited_by?(user)
-    favorites.exists?(user_id: user.id)
-  end
-  #記述修正必要
-
 end
